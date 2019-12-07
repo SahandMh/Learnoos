@@ -9,77 +9,79 @@ import {
 } from 'react-native';
 import styles from '../assets/style/login';
 import Register from './Register';
-import OriginalStyle from '../assets/style/parent'
-import { Parse } from "parse/react-native";
+import OriginalStyle from '../assets/style/parent';
+import {Parse} from 'parse/react-native';
 
 const Alert = require('react-native');
 
 export default class Login extends Component {
 
-    constructor(props){
+    constructor(props) {
         super(props);
         this.state = {
-            username: '',
+            phoneNumber: '',
             password: '',
-            nameError: null
-        }
+            nameError: null,
+        };
     }
+
+    static navigationOptions = {
+        header: null,
+    };
 
     navigateToPage = (page) => {
         this.props.navigation.navigate(page);
     };
 
-    alertAnError = (title,message) => {
+    alertAnError = (title, message) => {
         Alert.alert(
             title,
             message,
             [
-                {text: 'OK', onPress: () => {this.navigateToPage('LogInStack')}},
-            ]
-        )
+                {
+                    text: 'OK', onPress: () => {
+                        this.navigateToPage('Login');
+                    },
+                },
+            ],
+        );
     };
 
-    componentWillMount(){
+    componentWillMount() {
         Parse.User.currentAsync().then(user => {
             if (user !== undefined || user !== null) {
-                this.navigateToPage('LogInStack');
+                this.navigateToPage('Login');
             } else {
                 let sessionToken = user.getSessionToken();
                 Parse.User.become(sessionToken).then(object => {
-                    this.navigateToPage('MainStack');
+                    this.navigateToPage('Main');
                 }).catch(error => {
-                    this.navigateToPage('LogInStack');
+                    this.navigateToPage('Login');
                 });
             }
-        })
+        });
     }
 
-    onLogin = async() =>{
+    loginButtonClick = async () => {
         let
-            username = (this.state.username).trim(),
+            phoneNumber = (this.state.phoneNumber).trim(),
             password = (this.state.password).trim();
 
-        if (username === "" || password === "" ) {
-            this.setState(() => ({ nameError: `Fill the fields correctly.` }));
+        if (phoneNumber === '') {
+            this.setState(() => ({nameError: `لطفا شماره تلفن را وارد کنید`}));
+        } else if (password === '') {
+            this.setState(() => ({nameError: `لطفا رمز عبور را وارد کنید`}));
         } else {
             try {
-                await Parse.User.logIn(username.toString(), password.toString());
+                await Parse.User.logIn(phoneNumber.toString(), password.toString());
                 // this.submitAndClear();
                 this.props.navigation.navigate('Main');
             } catch (error) {
-                this.setState(() => ({ nameError: error.message }));
-                return (error)
+                this.setState(() => ({nameError: error.message}));
+                return (error);
             }
         }
     };
-
-    static navigationOptions = {
-        headerTitle: <Text style={OriginalStyle.headerTitle}>ورود</Text>,
-    };
-
-    loginButtonClick() {
-
-    }
 
     render() {
         const {navigate} = this.props.navigation;
@@ -90,15 +92,20 @@ export default class Login extends Component {
                                underlineColorAndroid="transparent"
                                placeholder="لطفا شماره موبایل خود را وارد کنید"
                                keyboardType="phoneNumber"
-                               value={this.state.username}
-                               onChangeText={(username) => this.setState({username})}/>
+                               value={this.state.phoneNumber}
+                               onChangeText={(phoneNumber) => this.setState({phoneNumber})}
+                               returnKeyType={'next'}
+                               blurOnSubmit={false}
+                               onSubmitEditing={() => this.passwordRef.focus()}/>
 
                     <TextInput style={styles.inputPhonePassword}
                                underlineColorAndroid="transparent"
                                secureTextEntry={true}
                                placeholder="لطفا رمز عبور خود را وارد کنید"
                                value={this.state.password}
-                               onChangeText={(password) => this.setState({password})}/>
+                               onChangeText={(password) => this.setState({password})}
+                               ref={passwordRef => this.passwordRef = passwordRef}
+                               returnKeyType='done'/>
 
                     {!!this.state.nameError && (
                         <View styles={styles.divError}>
@@ -107,7 +114,7 @@ export default class Login extends Component {
                     )}
 
                     <TouchableOpacity
-                        onPress={this.onLogin}
+                        onPress={this.loginButtonClick}
                         activeOpacity={0.8}>
                         <Text style={styles.loginButton}>ورود</Text>
                     </TouchableOpacity>

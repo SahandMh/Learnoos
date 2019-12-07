@@ -39,6 +39,15 @@ const styles = StyleSheet.create({
         padding: 12,
         fontFamily: 'IRANSansMobile'
     },
+    inputEmail: {
+        marginTop: 8,
+        textAlign: 'right',
+        borderColor: 'rgba(0,0,0,.1)',
+        borderWidth: 1,
+        borderRadius: 5,
+        padding: 12,
+        fontFamily: 'IRANSansMobile'
+    },
     inputPhonePassword: {
         marginTop: 16,
         textAlign: 'right',
