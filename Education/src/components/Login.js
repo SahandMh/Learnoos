@@ -7,9 +7,9 @@ import {
     TextInput,
     TouchableOpacity,
 } from 'react-native';
-import styles from '../assets/style/login';
+import styles from '../style/login';
 import Register from './Register';
-import OriginalStyle from '../assets/style/parent';
+import OriginalStyle from '../style/parent';
 import {Parse} from 'parse/react-native';
 
 const Alert = require('react-native');
@@ -50,11 +50,11 @@ export default class Login extends Component {
     componentWillMount() {
         Parse.User.currentAsync().then(user => {
             if (user !== undefined || user !== null) {
-                this.navigateToPage('Login');
+                this.navigateToPage('Main');
             } else {
                 let sessionToken = user.getSessionToken();
                 Parse.User.become(sessionToken).then(object => {
-                    this.navigateToPage('Main');
+                    this.navigateToPage('Login');
                 }).catch(error => {
                     this.navigateToPage('Login');
                 });
@@ -74,7 +74,7 @@ export default class Login extends Component {
         } else {
             try {
                 await Parse.User.logIn(email.toString(), password.toString());
-                // this.submitAndClear();
+
                 this.props.navigation.navigate('Main');
             } catch (error) {
                 this.setState(() => ({nameError: error.message}));

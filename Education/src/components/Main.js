@@ -6,19 +6,33 @@ import {
     ScrollView,
     TextInput,
     TouchableOpacity,
+    BackHandler,
 } from 'react-native';
-import styles from '../assets/style/login';
-import OriginalStyle from '../assets/style/parent';
+import styles from '../style/login';
+import OriginalStyle from '../style/parent';
 
 export default class Main extends Component {
 
-    static navigationOptions = {
-        headerTitle: <Text style={OriginalStyle.headerTitle}>ثبت نام</Text>,
+    componentWillMount() {
+        BackHandler.addEventListener('hardwareBackPress', this.handleBackButton);
+    }
+
+    componentWillUnmount() {
+        BackHandler.removeEventListener('hardwareBackPress', this.handleBackButton);
+    }
+
+    handleBackButton = () => {
+        BackHandler.exitApp();
     };
 
-    registerButtonClick(){
+    static navigationOptions = {
+        header: null,
+    };
+
+    registerButtonClick() {
 
     }
+
     render() {
         return <View style={styles.container}>
             <View style={styles.loginBox}>

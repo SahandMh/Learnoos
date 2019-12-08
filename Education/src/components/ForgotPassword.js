@@ -8,7 +8,7 @@ import {
     TouchableHighlight, AsyncStorage,
 } from 'react-native';
 import {Parse} from 'parse/react-native';
-import styles from '../assets/style/forgotpassword';
+import styles from '../style/forgotpassword';
 
 export default class ForgotPassword extends Component {
 
