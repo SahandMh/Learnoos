@@ -19,7 +19,7 @@ export default class Login extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            phoneNumber: '',
+            email: '',
             password: '',
             nameError: null,
         };
@@ -64,16 +64,16 @@ export default class Login extends Component {
 
     loginButtonClick = async () => {
         let
-            phoneNumber = (this.state.phoneNumber).trim(),
+            email = (this.state.email).trim(),
             password = (this.state.password).trim();
 
-        if (phoneNumber === '') {
+        if (email === '') {
             this.setState(() => ({nameError: `لطفا شماره تلفن را وارد کنید`}));
         } else if (password === '') {
             this.setState(() => ({nameError: `لطفا رمز عبور را وارد کنید`}));
         } else {
             try {
-                await Parse.User.logIn(phoneNumber.toString(), password.toString());
+                await Parse.User.logIn(email.toString(), password.toString());
                 // this.submitAndClear();
                 this.props.navigation.navigate('Main');
             } catch (error) {
@@ -90,10 +90,10 @@ export default class Login extends Component {
                 <ScrollView style={styles.inputGroups}>
                     <TextInput style={styles.inputPhoneNumber}
                                underlineColorAndroid="transparent"
-                               placeholder="لطفا شماره موبایل خود را وارد کنید"
-                               keyboardType="phoneNumber"
-                               value={this.state.phoneNumber}
-                               onChangeText={(phoneNumber) => this.setState({phoneNumber})}
+                               keyboardType="email-address"
+                               placeholder='لطفا شماره موبایل خود را وارد کنید'
+                               value={this.state.email}
+                               onChangeText={(email) => this.setState({email})}
                                returnKeyType={'next'}
                                blurOnSubmit={false}
                                onSubmitEditing={() => this.passwordRef.focus()}/>
@@ -125,7 +125,9 @@ export default class Login extends Component {
                         <Text style={styles.registerButton}>ثبت نام</Text>
                     </TouchableOpacity>
 
-                    <TouchableOpacity activeOpacity={0.8}>
+                    <TouchableOpacity
+                        onPress={() => navigate('ForgotPassword')}
+                        activeOpacity={0.8}>
                         <Text style={styles.forgetPassword}>فراموشی رمز عبور</Text>
                     </TouchableOpacity>
                 </ScrollView>

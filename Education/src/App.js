@@ -15,6 +15,7 @@ import {createAppContainer} from 'react-navigation';
 import {createStackNavigator} from 'react-navigation-stack';
 import {AsyncStorage} from 'react-native';
 import Main from './components/Main';
+import ForgotPassword from './components/ForgotPassword';
 
 const Parse = require('parse/react-native');
 Parse.setAsyncStorage(AsyncStorage);
@@ -27,6 +28,7 @@ const MainNavigator = createStackNavigator({
     Login: {screen: Login},
     Register: {screen: Register},
     Main: {screen: Main},
+    ForgotPassword: {screen: ForgotPassword},
 });
 
 

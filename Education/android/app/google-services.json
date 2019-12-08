@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "508875260457",
+    "firebase_url": "https://learnoos.firebaseio.com",
+    "project_id": "learnoos",
+    "storage_bucket": "learnoos.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:508875260457:android:3896c17ba49840aa6b1238",
+        "android_client_info": {
+          "package_name": "com.education"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "508875260457-f9aekgafjj08vn57i1v2sfkd78q8nmbb.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDOeGu28R7LQOSKsPd58J3AXThnXArwftQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "508875260457-f9aekgafjj08vn57i1v2sfkd78q8nmbb.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
