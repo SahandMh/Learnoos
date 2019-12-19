@@ -11,8 +11,10 @@ import styles from '../style/login';
 import Register from './Register';
 import OriginalStyle from '../style/parent';
 import {Parse} from 'parse/react-native';
+import AnimatedLoader from 'react-native-animated-loader';
 
 const Alert = require('react-native');
+const Spinner = require('react-native-spinkit');
 
 export default class Login extends Component {
 
@@ -50,7 +52,7 @@ export default class Login extends Component {
     componentWillMount() {
         Parse.User.currentAsync().then(user => {
             if (user !== undefined || user !== null) {
-                this.navigateToPage('Main');
+                this.navigateToPage('Login');
             } else {
                 let sessionToken = user.getSessionToken();
                 Parse.User.become(sessionToken).then(object => {
@@ -72,6 +74,7 @@ export default class Login extends Component {
         } else if (password === '') {
             this.setState(() => ({nameError: `لطفا رمز عبور را وارد کنید`}));
         } else {
+
             try {
                 await Parse.User.logIn(email.toString(), password.toString());
 
@@ -86,8 +89,8 @@ export default class Login extends Component {
     render() {
         const {navigate} = this.props.navigation;
         return <View style={styles.container}>
-            <View style={styles.loginBox}>
-                <ScrollView style={styles.inputGroups}>
+            <ScrollView style={styles.loginBox}>
+                <View style={styles.inputGroups}>
                     <TextInput style={styles.inputPhoneNumber}
                                underlineColorAndroid="transparent"
                                keyboardType="email-address"
@@ -130,8 +133,8 @@ export default class Login extends Component {
                         activeOpacity={0.8}>
                         <Text style={styles.forgetPassword}>فراموشی رمز عبور</Text>
                     </TouchableOpacity>
-                </ScrollView>
-            </View>
+                </View>
+            </ScrollView>
         </View>;
     }
 }

@@ -104,8 +104,8 @@ export default class Login extends Component {
 
     render() {
         return <View style={styles.container}>
-            <View style={styles.loginBox}>
-                <ScrollView style={styles.inputGroups}>
+            <ScrollView style={styles.loginBox}>
+                <View style={styles.inputGroups}>
                     <TextInput style={styles.inputPhoneNumber}
                                underlineColorAndroid="transparent"
                                placeholder="نام"
@@ -159,8 +159,8 @@ export default class Login extends Component {
                         activeOpacity={0.8}>
                         <Text style={styles.registerButton}>ثبت نام</Text>
                     </TouchableOpacity>
-                </ScrollView>
-            </View>
+                </View>
+            </ScrollView>
         </View>;
     }
 }
