@@ -8,7 +8,6 @@ import {
     TouchableOpacity,
 } from 'react-native';
 import styles from '../style/login';
-import OriginalStyle from '../style/parent';
 import {Parse} from 'parse/react-native';
 import {AsyncStorage} from 'react-native';
 

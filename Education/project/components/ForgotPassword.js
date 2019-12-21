@@ -5,7 +5,10 @@ import {
     Text,
     View,
     TextInput,
-    TouchableHighlight, AsyncStorage, ScrollView, TouchableOpacity,
+    TouchableHighlight,
+    AsyncStorage,
+    ScrollView,
+    TouchableOpacity,
 } from 'react-native';
 import {Parse} from 'parse/react-native';
 import styles from '../style/forgotpassword';

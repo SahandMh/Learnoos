@@ -150,6 +150,15 @@ android {
             keyPassword 'android'
         }
     }
+    signingConfigs {
+        release {
+
+        keyAlias = 'my-key-alias'
+            keyPassword 'learnoos'
+            storeFile file('C:\\Users\\Sahand\\Documents\\Projects\\learnoos\\Keys\\my-upload-key.keystore')
+            storePassword 'learnoos'
+        }
+    }
     buildTypes {
         debug {
             signingConfig signingConfigs.debug

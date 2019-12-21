@@ -9,7 +9,6 @@ import {
 } from 'react-native';
 import styles from '../style/login';
 import Register from './Register';
-import OriginalStyle from '../style/parent';
 import {Parse} from 'parse/react-native';
 import AnimatedLoader from 'react-native-animated-loader';
 
@@ -70,7 +69,7 @@ export default class Login extends Component {
             password = (this.state.password).trim();
 
         if (email === '') {
-            this.setState(() => ({nameError: `لطفا شماره تلفن را وارد کنید`}));
+            this.setState(() => ({nameError: `لطفا ایمیل خود را وارد کنید`}));
         } else if (password === '') {
             this.setState(() => ({nameError: `لطفا رمز عبور را وارد کنید`}));
         } else {
@@ -94,7 +93,7 @@ export default class Login extends Component {
                     <TextInput style={styles.inputPhoneNumber}
                                underlineColorAndroid="transparent"
                                keyboardType="email-address"
-                               placeholder='لطفا شماره موبایل خود را وارد کنید'
+                               placeholder='لطفا ایمیل خود را وارد کنید'
                                value={this.state.email}
                                onChangeText={(email) => this.setState({email})}
                                returnKeyType={'next'}

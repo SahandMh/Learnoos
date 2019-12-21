@@ -9,7 +9,6 @@ import {
     BackHandler,
 } from 'react-native';
 import styles from '../style/login';
-import OriginalStyle from '../style/parent';
 
 export default class Main extends Component {
 

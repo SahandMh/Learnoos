@@ -49,7 +49,7 @@ const styles = StyleSheet.create({
         fontFamily: 'IRANSansMobile'
     },
     inputPhonePassword: {
-        marginTop: 16,
+        marginTop: 8,
         textAlign: 'right',
         borderColor: 'rgba(0,0,0,.1)',
         borderWidth: 1,
@@ -60,7 +60,7 @@ const styles = StyleSheet.create({
     },
     loginButton: {
         textAlign: 'center',
-        marginTop: 24,
+        marginTop: 16,
         backgroundColor: '#329e98',
         color: '#fff',
         marginRight: 36,
