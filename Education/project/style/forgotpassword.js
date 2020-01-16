@@ -3,13 +3,21 @@ import {StyleSheet} from 'react-native';
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: '#ffffff',
+        backgroundColor: '#324856',
         justifyContent: 'center',
         alignItems: 'center',
         flexDirection: 'row',
     },
+    logo: {
+        alignItems: 'center',
+    },
+    appName: {
+        color: '#ffffff',
+        fontSize: 32,
+        fontFamily: 'IRANSansMobile',
+        textAlign: 'center',
+    },
     loginBox: {
-        backgroundColor: 'white',
         flex: 1,
         marginLeft: 16,
         marginRight: 16,
@@ -27,7 +35,7 @@ const styles = StyleSheet.create({
     inputEmail: {
         marginTop: 8,
         textAlign: 'right',
-        borderColor: 'rgba(0,0,0,.1)',
+        borderColor: '#637581',
         borderWidth: 1,
         borderRadius: 5,
         padding: 12,
@@ -36,8 +44,8 @@ const styles = StyleSheet.create({
     sendButton: {
         textAlign: 'center',
         marginTop: 24,
-        backgroundColor: '#329e98',
-        color: '#fff',
+        backgroundColor: '#ffffff',
+        color: '#000000',
         marginRight: 36,
         marginLeft: 36,
         borderRadius: 25,

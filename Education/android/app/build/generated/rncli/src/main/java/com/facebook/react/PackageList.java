@@ -26,6 +26,10 @@ import com.swmansion.reanimated.ReanimatedPackage;
 import com.swmansion.rnscreens.RNScreensPackage;
 // react-native-spinkit
 import com.react.rnspinkit.RNSpinkitPackage;
+// react-native-vector-icons
+import com.oblador.vectoricons.VectorIconsPackage;
+// @react-native-community/netinfo
+import com.reactnativecommunity.netinfo.NetInfoPackage;
 
 public class PackageList {
   private Application application;
@@ -76,7 +80,9 @@ public class PackageList {
       new RNGestureHandlerPackage(),
       new ReanimatedPackage(),
       new RNScreensPackage(),
-      new RNSpinkitPackage()
+      new RNSpinkitPackage(),
+      new VectorIconsPackage(),
+      new NetInfoPackage()
     ));
   }
 }

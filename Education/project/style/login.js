@@ -3,13 +3,21 @@ import {StyleSheet} from 'react-native';
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: '#ffffff',
+        backgroundColor: '#324856',
         justifyContent: 'center',
         alignItems: 'center',
         flexDirection: 'row',
     },
+    logo: {
+        alignItems: 'center',
+    },
+    appName: {
+        color: '#ffffff',
+        fontSize: 40,
+        fontFamily: 'IRANSansMobile',
+        textAlign: 'center',
+    },
     loginBox: {
-        backgroundColor: 'white',
         flex: 1,
         marginLeft: 16,
         marginRight: 16,
@@ -23,7 +31,7 @@ const styles = StyleSheet.create({
         textAlign: 'center',
         marginTop: 16,
         fontSize: 18,
-        fontFamily: 'IRANSansMobile'
+        fontFamily: 'IRANSansMobile',
     },
     inputGroups: {
         marginTop: 24,
@@ -33,36 +41,38 @@ const styles = StyleSheet.create({
     inputPhoneNumber: {
         marginTop: 8,
         textAlign: 'right',
-        borderColor: 'rgba(0,0,0,.1)',
+        borderColor: '#637581',
         borderWidth: 1,
         borderRadius: 5,
         padding: 12,
-        fontFamily: 'IRANSansMobile'
+        fontFamily: 'IRANSansMobile',
+        color: '#ffffff',
     },
     inputEmail: {
         marginTop: 8,
         textAlign: 'right',
-        borderColor: 'rgba(0,0,0,.1)',
+        borderColor: '#637581',
         borderWidth: 1,
         borderRadius: 5,
         padding: 12,
-        fontFamily: 'IRANSansMobile'
+        fontFamily: 'IRANSansMobile',
     },
     inputPhonePassword: {
         marginTop: 8,
         textAlign: 'right',
-        borderColor: 'rgba(0,0,0,.1)',
+        borderColor: '#637581',
         borderWidth: 1,
         borderRadius: 5,
         padding: 12,
         marginBottom: 16,
-        fontFamily: 'IRANSansMobile'
+        fontFamily: 'IRANSansMobile',
+        color: '#ffffff',
     },
     loginButton: {
         textAlign: 'center',
         marginTop: 16,
-        backgroundColor: '#329e98',
-        color: '#fff',
+        backgroundColor: '#ffffff',
+        color: '#000000',
         marginRight: 36,
         marginLeft: 36,
         borderRadius: 25,
@@ -73,7 +83,7 @@ const styles = StyleSheet.create({
         shadowOffset: {width: 0, height: 1},
         shadowOpacity: 0.01,
         overflow: 'hidden',
-        fontFamily: 'IRANSansMobile'
+        fontFamily: 'IRANSansMobile',
     },
     registerButton: {
         textAlign: 'center',
@@ -90,20 +100,20 @@ const styles = StyleSheet.create({
         shadowOffset: {width: 0, height: 1},
         shadowOpacity: 0.01,
         overflow: 'hidden',
-        fontFamily: 'IRANSansMobile'
+        fontFamily: 'IRANSansMobile',
     },
     forgetPassword: {
         textAlign: 'center',
         marginTop: 16,
         marginBottom: 16,
-        color: '#346086',
+        color: '#ffffff',
         fontSize: 18,
-        fontFamily: 'IRANSansMobile'
+        fontFamily: 'IRANSansMobile',
     },
     lottie: {
         width: 100,
-        height: 100
-    }
+        height: 100,
+    },
 });
 
 export default styles;

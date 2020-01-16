@@ -1,4 +1,4 @@
-#Mon Dec 09 16:23:30 IRST 2019
+#Thu Jan 16 04:35:18 IRST 2020
 base.0=C\:\\Users\\Sahand\\Documents\\Projects\\learnoos\\Education\\android\\app\\build\\intermediates\\dex\\debug\\mergeDexDebug\\out\\classes.dex
 path.0=classes.dex
 renamed.0=classes.dex
