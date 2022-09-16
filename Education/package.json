@@ -16,7 +16,7 @@
     "node": "latest",
     "parse": "latest",
     "parse-dashboard": "^2.0.5",
-    "parse-server": "^3.9.0",
+    "parse-server": "^4.10.14",
     "prop-types": "latest",
     "react": "latest",
     "react-native": "^0.61.5",
